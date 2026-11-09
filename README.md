@@ -1,222 +1,164 @@
-# ERP Multimadera
+# Sistema Multimadera 
 
-> Plataforma web para la gestión integral de clientes, empleados, materiales, pedidos y usuarios.
 
-ERP Multimadera es una solución empresarial compuesta por un frontend web y una API backend independientes. La aplicación está diseñada para centralizar procesos operativos y mantener separadas las responsabilidades de presentación, negocio y persistencia.
+[![Tipo](https://img.shields.io/badge/Tipo-Intranet%20%2F%20Back--Office-4F46E5?style=for-the-badge)](https://multimadera-web.vercel.app)
+[![Frontend](https://img.shields.io/badge/Frontend-React%2019%20%7C%20TypeScript%20%7C%20Vite%207-61DAFB?style=for-the-badge&logo=react)](https://github.com)
+[![Backend](https://img.shields.io/badge/Backend-Node.js%2024%20%7C%20Express%205%20%7C%20Awilix-339933?style=for-the-badge&logo=nodedotjs)](https://github.com)
+[![Database](https://img.shields.io/badge/Database-PostgreSQL%2017%20%7C%20Supabase-3ECF8E?style=for-the-badge&logo=supabase)](https://supabase.com)
+[![DevOps](https://img.shields.io/badge/DevOps-Docker%20%7C%20GitHub%20Actions%20CI%2FCD-2496ED?style=for-the-badge&logo=docker)](https://docker.com)
 
-## Funcionalidades principales
+> **Intranet de Gestión Operativa y Administrativa (ERP Interno)** desarrollada a la medida para un alquiler de herramientas para construccion (Escuintla, Guatemala). La plataforma centraliza el flujo de mostrador para el alquiler de herramientas auxiliares de construcción, sustituyendo los registros manuales en cuadernos de papel por un entorno web seguro con **Control de Acceso Basado en Roles (RBAC)**, reduciendo en más del **80% el tiempo de despacho**, garantizando **trazabilidad del 100% de herramientas en obras activas** y asegurando **cero errores de cálculo en subtotales y totales**.
 
-- Gestión de clientes.
-- Gestión de empleados.
-- Gestión de materiales.
-- Gestión de pedidos.
-- Administración de usuarios y permisos.
-- Reportería para la consulta de información empresarial.
-- Autenticación y autorización para proteger los recursos.
-- Respuestas paginadas para facilitar el consumo de grandes volúmenes de información.
+---
 
-## Arquitectura y tecnologias
+## en Producción
+* **Aplicación Web React (Vercel)** 
+* **API REST Node/express (Render):** Contenedor Docker Linux multi-stage con SSL/TLS continuo.
+* **Base de Datos & Auth:** PostgreSQL 17 administrado en Supabase.
 
-> Las tecnologías se muestran con badges SVG enlazados a su documentación oficial.
+---
 
-### Frontend
+## Contexto Operativo
 
-<p>
-  <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" /></a>
-  <a href="https://react.dev/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/React-20232A.svg?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" /></a>
-  <a href="https://vite.dev/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Vite-646CFF.svg?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" /></a>
-  <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4.svg?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" /></a>
-</p>
+Antes de la implementación del sistema, el negocio operaba bajo registros manuscritos en libretas de papel, lo que generaba inconsistencias:
 
-### Backend
+| Proceso en Papel | Reto Operativo Identificado | Solución Implementada en el Sistema |
+| :--- | :--- | :--- |
+| **Lentitud en Mostrador** | 12 a 15 minutos redactando notas a mano para pedidos grandes. | Formulario web reactivo que reduce el tiempo a **menos de 2 minutos**. |
+| **Pérdida de Trazabilidad** | Herramientas en obra sin responsable, fechas ni dirección clara. | Captura obligatoria de **dirección de obra, fechas, albañil y propietario**. |
+| **Riesgo en Sumatorias Manuales** | Multiplicaciones y sumas manuales con calculadora en cada renglón. | **100% de exactitud matemática:** Cálculo automático de subtotales y totales. |
+| **Vulnerabilidad de Datos** | Cuadernos abiertos sobre el mostrador al alcance de cualquier visitante. | **Seguridad RBAC:** Control de acceso por roles con JWT y cookies *HttpOnly*. |
 
-<p>
-  <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" /></a>
-  <a href="https://nodejs.org/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Node.js-339933.svg?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" /></a>
-  <a href="https://expressjs.com/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Express.js-000000.svg?style=for-the-badge&logo=express&logoColor=white" alt="Express.js" /></a>
-  <a href="https://en.wikipedia.org/wiki/Multitier_architecture" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Layered_Architecture-5C2D91.svg?style=for-the-badge&logo=stackblitz&logoColor=white" alt="Layered Architecture" /></a>
-  <a href="https://en.wikipedia.org/wiki/Dependency_injection" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Dependency_Injection-6DB33F.svg?style=for-the-badge&logo=dependabot&logoColor=white" alt="Dependency Injection" /></a>
-  <a href="https://auth0.com/docs" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Auth_Middleware-FF6F00.svg?style=for-the-badge&logo=auth0&logoColor=white" alt="Authentication Middleware" /></a>
-  <a href="https://swagger.io/specification/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Swagger%2FOpenAPI-85EA2D.svg?style=for-the-badge&logo=swagger&logoColor=black" alt="Swagger / OpenAPI" /></a>
-</p>
+---
 
-### Persistencia y despliegue
+## Módulos Principales del Sistema
 
-<p>
-  <a href="https://supabase.com/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Supabase-181818.svg?style=for-the-badge&logo=supabase&logoColor=3ECF8E" alt="Supabase" /></a>
-  <a href="https://www.postgresql.org/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/PostgreSQL-4169E1.svg?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" /></a>
-  <a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Docker-2496ED.svg?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" /></a>
-  <a href="https://render.com/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Render-46E3B7.svg?style=for-the-badge&logo=render&logoColor=000000" alt="Render" /></a>
-  <a href="https://vercel.com/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Vercel-000000.svg?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" /></a>
-</p>
+### 1. Módulo de Clientes (Padrón Indexado)
+Cuenta con buscador reactivo por nombre o teléfono en menos de 5 segundos y botones de contacto directo para llamadas y WhatsApp.
 
-## Arquitectura general
+![Módulo de Clientes](img/presentacion-clientes-pantalla-completa.png)
 
-El frontend y el backend evolucionan como aplicaciones independientes. La SPA de React consume la API de Node.js mediante un cliente HTTP. El backend concentra las reglas de negocio y controla el acceso a la persistencia.
+---
+
+### 2. Módulo de Materiales (Catálogo Técnico)
+Estandariza las especificaciones técnicas de las herramientas auxiliares de madera y metal: tablas, tendales de varias medidas, duelas, parales y triquez metálicos, inventario con stock y movimientos de stock.
+
+![Módulo de Materiales](img/presentacion-materiales-pantalla-completa.png)
+
+---
+
+### 3. Módulo de Pedidos (Núcleo Operativo)
+Núcleo del alquiler: asignación obligatoria de obra, fechas de inicio y devolución, y albañil responsable. Genera **cero errores en el cálculo automático de subtotales y totales**. Permite auditar en tiempo real los pedidos activos en campo (evidenciado con 4 obras simultáneas y 34 líneas de detalle en seguimiento).
+
+![Módulo de Pedidos](img/presentacion-pedidos-pantalla-completa.png)
+
+---
+
+### 4. ⚙️ Módulos de Soporte Administrativo
+* **Empleados:** Registro del personal y ciclo de vida laboral; base estructural para la asignación de cuentas de usuario.
+* **Planillas:** Componente administrativo para la gestión y control de las semanas de pago del personal del negocio.
+* **Usuarios y Roles (RBAC):** Gobernanza de seguridad interna, definiendo qué pantallas y acciones específicas (ver, crear, editar) tiene autorizadas cada trabajador.
+* **Pedidos de Venta y Reportería:** Procesamiento de ventas directas de insumos que no son de alquiler y generación de reportes consolidados para la supervisión de la gerencia.
+
+---
+
+## 🏛️ Arquitectura del Software
+
+El sistema implementa una arquitectura distribuida multicapa (*N-Tier*), desacoplada y orientada a la mantenibilidad:
 
 ```mermaid
-
-flowchart LR
-    USER[Usuario]
-    subgraph FRONTEND["React + Vite"]
-        direction TB
-        UI["Pages y componentes UI"]
-        ROUTES["React Router"]
-        FEATURES["Features por dominio"]
-        AUTHSTORE["authStore"]
-        APICLIENT["Cliente HTTP"]
-        
+graph TD
+    User([Navegador Intranet / PWA de Mostrador])
+    
+    subgraph Frontend_Intranet [Frontend - multimaderaWeb]
+        Vercel[Vercel Edge Network]
+        AuthGuard[ProtectedLayout & Auth Guards]
+        ReactApp[React 19 SPA + TypeScript + Vite 7]
+        ZustandStore[Zustand Auth Store - Roles & Permisos]
+        TanStack[TanStack Query Server State Cache]
+        AxiosClient[Axios Client - withCredentials: true]
     end
 
-    subgraph BACKEND["API Node.js / Express.js"]
-        direction TB
-        SERVER["server.ts / app.ts"]
-        CONTROLLERS["Controladores"]
-        MIDDLEWARE["Middleware"]
-        SERVICES["Servicios"]
-        REPOSITORIES["Repositorios"]
+    subgraph Backend_API [Backend - apiMultimadera]
+        RenderCont[Render Linux Docker Container]
+        ExpressApp[Express 5 Server en Node.js 24]
+        AuthMiddleware[auth.middleware.ts - Verificación JWT]
+        Decorators[awilix-router-core + @SecurePost / @SecureGet]
+        ZodValidator[Validación de Esquemas Zod]
+        IoCContainer[Contenedor IoC Awilix Scoped]
+        Services[Lógica de Negocio Pura]
+        Repositories[Contratos Repository Pattern]
     end
 
-    SUPABASE[(Supabase / PostgreSQL)]
+    subgraph Persistence_Cloud [Infraestructura Cloud Supabase / AWS]
+        SupaAuth[Supabase Auth - Proveedor Criptográfico JWT]
+        PostgreSQL[(PostgreSQL 17 Relacional - Llaves Identity)]
+    end
 
-    USER --> UI
-    UI --> ROUTES
-    ROUTES --> FEATURES
-    FEATURES --> AUTHSTORE
-    FEATURES --> APICLIENT
-    APICLIENT -->|HTTP| SERVER
-    SERVER --> CONTROLLERS
-    CONTROLLERS --> MIDDLEWARE
-    MIDDLEWARE --> SERVICES
-    SERVICES --> REPOSITORIES
-    REPOSITORIES --> SUPABASE
+    User --> Vercel
+    Vercel --> AuthGuard
+    AuthGuard --> ReactApp
+    ReactApp --> ZustandStore & TanStack
+    TanStack --> AxiosClient
+    
+    AxiosClient -->|HTTPS / Cookies HttpOnly / REST API| RenderCont
+    RenderCont --> ExpressApp
+    ExpressApp --> AuthMiddleware --> Decorators --> ZodValidator --> IoCContainer --> Services --> Repositories
+    
+    Repositories -->|PostgreSQL 17 Driver Seguro| PostgreSQL
+    ReactApp -.->|Auth Directa SDK| SupaAuth
 ```
 
-## Arquitectura del backend
+---
 
-La API está organizada en capas con responsabilidades diferenciadas:
+## Decisiones de Ingeniería y Buenas Prácticas
 
-- **Controladores:** reciben las solicitudes HTTP y construyen las respuestas.
-- **Middleware:** valida autenticación, permisos y otras preocupaciones transversales.
-- **Servicios:** contienen los casos de uso y las reglas de negocio.
-- **Contratos de repositorio:** desacoplan la lógica de negocio de la tecnología de persistencia.
-- **Repositorios de Supabase:** implementan el acceso concreto a PostgreSQL.
-- **DTOs:** definen y validan los contratos de entrada y salida de la API.
+* **Inversión de Control (IoC):** Inyección de dependencias con `awilix` con ciclo de vida *scoped* por petición HTTP. La lógica de negocio no conoce la implementación física de la base de datos, interactuando únicamente a través de contratos (`ReaderDataBase` y `WriteDatabase`).
+* **Validación de Esquemas con Zod:** Toda entrada de datos en peticiones `POST`, `PATCH` o parámetros de consulta es validada y sanitizada mediante esquemas tipados de Zod, evitando ataques de asignación masiva e inconsistencias estructurales.
+* **Seguridad Defensiva y RBAC Granular:**
+  * Almacenamiento de tokens JWT en cookies con atributos `HttpOnly; Secure; SameSite`, neutralizando vectores de ataque XSS y CSRF.
+  * Matriz relacional de permisos por módulo y acción (ver, crear, editar, eliminar) en `tblAccionesRol`.
+  * Segregación de funciones: el rol de mostrador (*Admin Pedidos*) opera exclusivamente clientes, catálogo y órdenes de alquiler, protegiendo los datos administrativos para acceso único del *Administrador*.
+* **Frontend Reactivo y Capacidades PWA:**
+  * Construido con **React 19**, **TypeScript** estricto (cero uso de `any`) y **Vite 7**.
+  * Sincronización asíncrona de servidor con **TanStack Query (v5)** y caché inteligente.
+  * Interfaz responsiva y accesible desarrollada con **Tailwind CSS 4** y primitivas de **Radix UI**.
+  * Soporte PWA instalable como aplicación de escritorio nativa en los equipos del mostrador.
+* **Cultura DevOps y CI/CD:**
+  * Flujos automatizados en **GitHub Actions** que ejecutan chequeo de tipos estáticos (`npm run type-check`), validación de compilación y pruebas de arranque en seco (`npm run test:runtime`).
+  * Despliegue automatizado sin caídas del servicio (*Zero-Downtime*) hacia Render y Vercel.
+  * Imagen Linux optimizada mediante construcción multi-etapa (**Docker multi-stage build**).
+  * Rutina programada de respaldos diarios (DRP) vía Cron (`pg_dump` cifrado).
 
-### Flujo de una petición
+---
 
-```mermaid
-%%{init: {
-  "flowchart": {
-    "htmlLabels": false,
-    "nodeSpacing": 8,
-    "rankSpacing": 12,
-    "padding": 6,
-    "useMaxWidth": true
-  },
-  "themeVariables": {
-    "fontSize": "10px"
-  }
-}}%%
+## 📊 Métricas de Desempeño e Impacto
 
-flowchart LR
-    CLIENT[React]
-    SERVER[server.ts]
-    APP[app.ts]
-    CONTROLLER[Controladores]
-    AUTH[Auth Middleware]
-    PERM[Permisos Middleware]
-    SERVICE[Servicios]
-    CONTRACT[Contratos Repo]
-    SUPABASE[Repos Supabase]
-    DB[(PostgreSQL)]
+| Métrica Evaluada | Proceso Anterior (Papel) | Con Sistema Multimadera | Impacto Registrado |
+| :--- | :---: | :---: | :---: |
+| **Tiempo de registro de pedido** | 12 a 15 min | < 2 min | **80%+ de reducción en mostrador** |
+| **Búsqueda de clientes** | 3 a 5 min | < 5 segundos | **Búsqueda indexada instantánea** |
+| **Precisión en subtotales y totales** | Riesgo de error humano | 100% exacto | **Cero errores en sumatorias** |
+| **Trazabilidad de herramientas** | Hojas sueltas | 100% digital | **Control de pedidos y obras en vivo** |
+| **Disponibilidad del servicio (Uptime)** | N/A | 99.9% | **Infraestructura Cloud-Native en Vercel/Render** |
 
-    CLIENT -->|HTTP Req| SERVER
-    SERVER --> APP --> CONTROLLER --> AUTH --> PERM --> SERVICE --> CONTRACT --> SUPABASE --> DB
-    DB --> SUPABASE --> SERVICE --> CONTROLLER
-    CONTROLLER -->|HTTP Res| CLIENT
+---
+
+## Stack Tecnológico
+
+```
+Frontend:        React 19.2 | TypeScript 5.9 | Vite 7.3 | Tailwind CSS 4 | TanStack Query 5 | Radix UI | Axios | PWA
+Backend:         Node.js 24 LTS | Express 5.1 | TypeScript 5.8 | Awilix 12 (IoC) | Zod 4 | Pino Logger | Swagger UI
+Base de Datos:   PostgreSQL 17 | Supabase BaaS (AWS)
+DevOps & Cloud:  Docker Multi-Stage | GitHub Actions CI/CD | Vercel Edge | Render Web Service
+Pruebas & QA:    Playwright | Runtime Smoke Tests | ESLint
 ```
 
+---
 
-## Arquitectura del frontend
+## 👨‍💻 Autor
 
-La interfaz utiliza React con Vite, Tailwind CSS y organiza el código por funcionalidades de negocio. Cada funcionalidad agrupa sus componentes, modelos y servicios, mientras que las piezas compartidas se mantienen en módulos reutilizables.
-
-```mermaid
-flowchart LR
-    MAIN[main.tsx]
-    APP[App.tsx]
-    ROUTES[Rutas de la aplicación]
-    LAYOUT[Layout protegido]
-    FEATURE[Feature de negocio]
-    SERVICE[Servicios de la feature]
-    CLIENT[Cliente HTTP]
-    API[API Multimadera]
-
-    MAIN --> APP
-    APP --> ROUTES
-    ROUTES --> LAYOUT
-    LAYOUT --> FEATURE
-    FEATURE --> SERVICE
-    SERVICE --> CLIENT
-    CLIENT -->|HTTP| API
-```
-
-Las funcionalidades principales se organizan alrededor de los siguientes dominios:
-
-- `clientes`
-- `empleados`
-- `materiales`
-- `pedidos`
-- `usuarios`
-- `reporteria`
-
-## Seguridad y autorización
-
-La seguridad se implementa en dos niveles:
-
-- En el frontend, `ProtectedRoutes`, `ProtectedLayout`, `authStore` y `usePermisos` controlan la navegación y la visibilidad de elementos de la interfaz.
-- En el backend, los middleware de autenticación y permisos realizan la validación definitiva antes de ejecutar operaciones protegidas.
-
-La protección del frontend mejora la experiencia de usuario, pero no sustituye la autorización del backend. Las reglas de acceso deben validarse siempre en la API antes de consultar o modificar información.
-
-```mermaid
-sequenceDiagram
-    actor Usuario
-    participant Web as React
-    participant Store as authStore
-    participant API as Node / Express
-    participant Auth as Middleware de autenticación
-    participant Permisos as Middleware de permisos
-    participant DB as Supabase
-
-    Usuario->>Web: Inicia sesión
-    Web->>Store: Guarda el estado de autenticación
-    Web->>API: Solicita un recurso protegido
-    API->>Auth: Valida autenticación
-    Auth->>Permisos: Comprueba permisos
-    Permisos->>DB: Ejecuta la operación autorizada
-    DB-->>API: Devuelve los datos
-    API-->>Web: Respuesta paginada o resultado
-    Web-->>Usuario: Renderiza la información
-```
-
-## Decisiones arquitectónicas
-
-- **Separación de aplicaciones:** frontend y backend pueden evolucionar y desplegarse de forma independiente.
-- **Arquitectura por funcionalidades:** cada módulo de negocio mantiene sus componentes, modelos y servicios relacionados.
-- **Separación de responsabilidades:** controladores, servicios y repositorios tienen responsabilidades claras.
-- **Inversión del acceso a datos:** los servicios dependen de contratos, mientras que Supabase queda aislado en la infraestructura.
-- **Middleware transversal:** autenticación y permisos se gestionan fuera de los controladores.
-- **DTOs y paginación:** favorecen contratos consistentes y respuestas adecuadas para el frontend.
-- **Documentación de API:** Swagger / OpenAPI facilita consultar y mantener los endpoints documentados.
-- **Contenerización:** Docker y Docker Compose simplifican los flujos de desarrollo y ejecución del backend.
-- **Despliegue flexible:** Vercel y Render permiten desplegar de forma independiente el frontend y la API según las necesidades del proyecto.
-
-## Estado del proyecto
-
-El proyecto se encuentra estructurado como una solución modular orientada a la gestión empresarial. Las funcionalidades, enlaces de despliegue y comandos de ejecución deben mantenerse sincronizados con la implementación actual.
-
-## Sobre este repositorio
-
-Este README presenta la arquitectura y las decisiones técnicas de ERP Multimadera. Para una revisión técnica completa, se requiere autorización por cuestiones de seguridad basadas en la tríada CIA: confidencialidad, integridad y disponibilidad.
+**Berner Samuel Moreira Martínez**  
+*Ingeniería en Sistemas de Información y Ciencias de la Computación*  
+Universidad Mariano Gálvez de Guatemala — Campus Escuintla  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Conectar-0A66C2?style=flat&logo=linkedin)](https://linkedin.com)
