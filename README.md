@@ -51,6 +51,7 @@ Estandariza las especificaciones técnicas de las herramientas auxiliares de mad
 Núcleo del alquiler: asignación obligatoria de obra, fechas de inicio y devolución, y albañil responsable. Genera **cero errores en el cálculo automático de subtotales y totales**. Permite auditar en tiempo real los pedidos activos en campo (evidenciado con 4 obras simultáneas y 34 líneas de detalle en seguimiento).
 
 ![Módulo de Pedidos](img/presentacion-pedidos-pantalla-completa.png)
+![Módulo de Pedidos](img/pantalla-reportes-pedidos.png)
 
 ---
 
