@@ -7,7 +7,7 @@
 [![Database](https://img.shields.io/badge/Database-PostgreSQL%2017%20%7C%20Supabase-3ECF8E?style=for-the-badge&logo=supabase)](https://supabase.com)
 [![DevOps](https://img.shields.io/badge/DevOps-Docker%20%7C%20GitHub%20Actions%20CI%2FCD-2496ED?style=for-the-badge&logo=docker)](https://docker.com)
 
-> **Intranet de Gestión Operativa y Administrativa (ERP Interno)** desarrollada a la medida para un alquiler de herramientas para construccion (Escuintla, Guatemala). La plataforma centraliza el flujo de mostrador para el alquiler de herramientas auxiliares de construcción, sustituyendo los registros manuales en cuadernos de papel por un entorno web seguro con **Control de Acceso Basado en Roles (RBAC)**, reduciendo en más del **80% el tiempo de despacho**, garantizando **trazabilidad del 100% de herramientas en obras activas** y asegurando **cero errores de cálculo en subtotales y totales**.
+> **Intranet de Gestión Operativa y Administrativa (ERP Interno)** desarrollada a la medida para un alquiler de herramientas para construccion (Escuintla, Guatemala). La plataforma centraliza el flujo de mostrador para el alquiler de herramientas auxiliares de construcción, sustituyendo los registros manuales en cuadernos por un entorno web seguro con **Control de Acceso Basado en Roles (RBAC)**, reduciendo en más del **80% el tiempo de despacho**, garantizando **trazabilidad del 100% de herramientas en obras activas** y asegurando **cero errores de cálculo en subtotales y totales**.
 
 ---
 
